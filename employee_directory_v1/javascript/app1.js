@@ -7,8 +7,8 @@ const gridContainer = document.querySelector('.content-wrapper');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
-const prevEmployeeBtn = document.querySelector('.prev-employee-btn');
-const nextEmployeeBtn = document.querySelector('.next-employee-btn');
+// const prevEmployeeBtn = document.querySelector('.prev-employee-btn');
+// const nextEmployeeBtn = document.querySelector('.next-employee-btn');
 
 // function to capitalize
 
@@ -53,12 +53,12 @@ function displayModal(index) {
   } = employees[index];
   const date = new Date(dob.date);
   const modalHTML = `
-    <button class="prev-employee-btn" type="button" onclick="prev()">&#60;</button>
+    <button class="prev-employee-btn" type="button" onclick="prevEmployeeBtn()">&#60;</button>
     <img class="profile-pic" src="${picture.large}" />
-    <button class="next-employee-btn" type="button">&#62;</button>
-    <div class="text-container">
+    <button class="next-employee-btn" type="button" onclick="nextEmployeeBtn()">&#62;</button>
+    <div class="text-container" data-index="${index}" >
     <h2 class="employee-name">${name.first} ${name.last}</h2>
-    <p class="employee-email-address">${email}</p>
+    <p class="employee-email-address employee-email-address-modal">${email}</p>
     <p class="employee-city">${city}</p>
     <hr class="hr-break"/>
     <p class="employee-phone">${phone}</p>
@@ -118,6 +118,22 @@ gridContainer.addEventListener('click', e => {
   }
 });
 
-// function prevEmployeeBtn() {
-//   console.log('hi');
-// }
+function prevEmployeeBtn() {
+  const currentModalEmployeeIndexAsString = document
+    .querySelector('.text-container ')
+    .getAttribute('data-index');
+  const currentModalEmployeeIndexAsNumber = parseInt(
+    currentModalEmployeeIndexAsString
+  );
+  displayModal(currentModalEmployeeIndexAsNumber - 1);
+}
+
+function nextEmployeeBtn() {
+  const currentModalEmployeeIndexAsString = document
+    .querySelector('.text-container ')
+    .getAttribute('data-index');
+  const currentModalEmployeeIndexAsNumber = parseInt(
+    currentModalEmployeeIndexAsString
+  );
+  displayModal(currentModalEmployeeIndexAsNumber + 1);
+}
