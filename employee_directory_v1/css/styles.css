@@ -7,6 +7,10 @@ body {
   padding: 2em 0em;
 }
 
+* .modal-content {
+  display: block;
+}
+
 /* MAIN CONTENT STYLING =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
 header {
@@ -106,6 +110,7 @@ input:focus {
 }
 /* to capitalize */
 .employee-name,
+.employee-name-modal,
 .employee-city,
 .employee-address,
 .employee-birthday {

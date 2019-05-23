@@ -7,6 +7,7 @@ const gridContainer = document.querySelector('.content-wrapper');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const modalCard = document.querySelector('.model-content');
 // const prevEmployeeBtn = document.querySelector('.prev-employee-btn');
 // const nextEmployeeBtn = document.querySelector('.next-employee-btn');
 
@@ -53,11 +54,12 @@ function displayModal(index) {
   } = employees[index];
   const date = new Date(dob.date);
   const modalHTML = `
+ 
     <button class="prev-employee-btn" type="button" onclick="prevEmployeeBtn()">&#60;</button>
     <img class="profile-pic" src="${picture.large}" />
     <button class="next-employee-btn" type="button" onclick="nextEmployeeBtn()">&#62;</button>
     <div class="text-container" data-index="${index}" >
-    <h2 class="employee-name">${name.first} ${name.last}</h2>
+    <h2 class="employee-name-modal">${name.first} ${name.last}</h2>
     <p class="employee-email-address employee-email-address-modal">${email}</p>
     <p class="employee-city">${city}</p>
     <hr class="hr-break"/>
@@ -65,6 +67,7 @@ function displayModal(index) {
     <p class="employee-address">${street}, ${state} ${postcode}</p>
     <p class="employee-birthday">Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
+
 `;
 
   overlay.classList.remove('hidden');
