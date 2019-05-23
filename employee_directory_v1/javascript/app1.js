@@ -8,8 +8,8 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 const modalCard = document.querySelector('.model-content');
-// const prevEmployeeBtn = document.querySelector('.prev-employee-btn');
-// const nextEmployeeBtn = document.querySelector('.next-employee-btn');
+const prevEmployeeBtn = document.querySelector('.prev-employee-btn');
+const nextEmployeeBtn = document.querySelector('.next-employee-btn');
 
 // function to capitalize
 
