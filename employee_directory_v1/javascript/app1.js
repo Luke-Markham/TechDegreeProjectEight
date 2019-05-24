@@ -8,10 +8,6 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 const modalCard = document.querySelector('.model-content');
-const prevEmployeeBtnFAIL = document.querySelector('.prev-employee-btn');
-const nextEmployeeBtnFAIL = document.querySelector('.next-employee-btn');
-
-// function to capitalize
 
 // Display all employees =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function displayEmployees(response) {
@@ -24,13 +20,14 @@ function displayEmployees(response) {
     const { email } = employee;
     const { city } = employee.location;
     const { picture } = employee;
-
+    const emailSplit = email.split('@');
     employeeHTML += `
   <div class="employee-card" data-index="${index}">
   <img class="profile-pic" src="${picture.large}" />
   <div class="employee-details">
   <h2 class="employee-name">${name.first} ${name.last}</h2>
-  <p class="employee-email-address">${email}</p>
+  <p class="employee-email-address">${emailSplit[0]}</p> 
+<p class="employee-email-address">@${emailSplit[1]}</p>
   <p class="employee-city">${city}</p>
   </div>
   </div>
@@ -55,9 +52,9 @@ function displayModal(index) {
   const date = new Date(dob.date);
   const modalHTML = `
  
-    <button class="prev-employee-btn" type="button" onclick="prevEmployeeBtn()">&#60;</button>
+    <button class="prev-employee-btn" type="button" >&#60;</button>
     <img class="profile-pic" src="${picture.large}" />
-    <button class="next-employee-btn" type="button" onclick="nextEmployeeBtn()">&#62;</button>
+    <button class="next-employee-btn" type="button" >&#62;</button>
     <div class="text-container" data-index="${index}" >
     <h2 class="employee-name-modal">${name.first} ${name.last}</h2>
     <p class="employee-email-address employee-email-address-modal">${email}</p>
@@ -72,6 +69,12 @@ function displayModal(index) {
 
   overlay.classList.remove('hidden');
   modalContainer.innerHTML = modalHTML;
+  document.querySelector('.prev-employee-btn').addEventListener('click', () => {
+    prevEmployeeBtn();
+  });
+  document.querySelector('.next-employee-btn').addEventListener('click', () => {
+    nextEmployeeBtn();
+  });
 }
 
 // Search Input Functionality =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -118,6 +121,11 @@ gridContainer.addEventListener('click', e => {
     const card = e.target.closest('.employee-card');
     const index = card.getAttribute('data-index');
     displayModal(index);
+    console.log(index);
+    if (index === '0') {
+      document.querySelector('.prev-employee-btn').style.display = 'none';
+    } else if (index === '11')
+      document.querySelector('.next-employee-btn').style.display = 'none';
   }
 });
 
@@ -129,6 +137,11 @@ function prevEmployeeBtn() {
     currentModalEmployeeIndexAsString
   );
   displayModal(currentModalEmployeeIndexAsNumber - 1);
+  if (currentModalEmployeeIndexAsString === '1') {
+    document.querySelector('.prev-employee-btn').style.display = 'none';
+  } else {
+    document.querySelector('.prev-employee-btn').style.display = 'block';
+  }
 }
 
 function nextEmployeeBtn() {
@@ -139,4 +152,9 @@ function nextEmployeeBtn() {
     currentModalEmployeeIndexAsString
   );
   displayModal(currentModalEmployeeIndexAsNumber + 1);
+  if (currentModalEmployeeIndexAsString === '10') {
+    document.querySelector('.next-employee-btn').style.display = 'none';
+  } else {
+    document.querySelector('.next-employee-btn').style.display = 'block';
+  }
 }
