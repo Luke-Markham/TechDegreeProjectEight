@@ -166,6 +166,11 @@ input:focus {
   background-color: transparent;
 }
 
+.prev-employee-btn:focus,
+.next-employee-btn:focus {
+  background-color: transparent;
+}
+
 .hr-break {
   margin: 1.5em auto;
 }
