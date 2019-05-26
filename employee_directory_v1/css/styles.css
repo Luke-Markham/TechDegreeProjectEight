@@ -150,10 +150,12 @@ input:focus {
 
 .prev-employee-btn {
   left: 10px;
+  padding: 0px;
 }
 
 .next-employee-btn {
   right: 10px;
+  padding: 0px;
 }
 
 .prev-employee-btn:hover,

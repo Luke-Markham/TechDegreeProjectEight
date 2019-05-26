@@ -121,7 +121,6 @@ gridContainer.addEventListener('click', e => {
     const card = e.target.closest('.employee-card');
     const index = card.getAttribute('data-index');
     displayModal(index);
-    console.log(index);
     if (index === '0') {
       document.querySelector('.prev-employee-btn').style.display = 'none';
     } else if (index === '11')
