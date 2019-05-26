@@ -55,14 +55,6 @@ input:focus {
   transition: background-color 0.5s;
 }
 
-.search-btn:hover {
-  background-color: rgba(21, 71, 128, 0.247);
-}
-
-.search-btn:active {
-  background-color: rgba(21, 71, 128, 0.589);
-}
-
 .content-wrapper {
   display: grid;
   grid-gap: 1.5em;
@@ -211,6 +203,13 @@ input:focus {
 @media (min-width: 480px) {
   .profile-pic {
     margin: 1em;
+  }
+  .search-btn:hover {
+    background-color: rgba(21, 71, 128, 0.247);
+  }
+
+  .search-btn:active {
+    background-color: rgba(21, 71, 128, 0.589);
   }
 }
 
