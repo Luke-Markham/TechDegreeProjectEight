@@ -156,17 +156,6 @@ input:focus {
   right: 10px;
 }
 
-.prev-employee-btn:hover,
-.next-employee-btn:hover {
-  background-color: rgba(21, 71, 128, 0.247);
-  color: white;
-}
-
-.prev-employee-btn:active,
-.next-employee-btn:active {
-  background-color: rgba(21, 71, 128, 0.589);
-}
-
 .hr-break {
   margin: 1.5em auto;
 }
@@ -204,11 +193,14 @@ input:focus {
   .profile-pic {
     margin: 1em;
   }
-  .search-btn:hover {
+  .prev-employee-btn:hover,
+  .next-employee-btn:hover {
     background-color: rgba(21, 71, 128, 0.247);
+    color: white;
   }
 
-  .search-btn:active {
+  .prev-employee-btn:active,
+  .next-employee-btn:active {
     background-color: rgba(21, 71, 128, 0.589);
   }
 }
