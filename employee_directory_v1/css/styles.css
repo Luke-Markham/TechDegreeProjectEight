@@ -156,6 +156,16 @@ input:focus {
   right: 10px;
 }
 
+.prev-employee-btn:hover,
+.next-employee-btn:hover {
+  background-color: transparent;
+}
+
+.prev-employee-btn:active,
+.next-employee-btn:active {
+  background-color: transparent;
+}
+
 .hr-break {
   margin: 1.5em auto;
 }
