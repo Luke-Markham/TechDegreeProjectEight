@@ -157,21 +157,18 @@ input:focus {
   right: 10px;
   padding: 0px;
 }
-
 .prev-employee-btn:hover,
 .next-employee-btn:hover {
-  background-color: transparent;
+  background-color: rgba(21, 71, 128, 0.247);
+  color: white;
 }
 
 .prev-employee-btn:active,
 .next-employee-btn:active {
-  background-color: transparent;
+  background-color: rgba(21, 71, 128, 0.589);
+}
 }
 
-.prev-employee-btn:focus,
-.next-employee-btn:focus {
-  background-color: transparent;
-}
 
 .hr-break {
   margin: 1.5em auto;
@@ -210,17 +207,7 @@ input:focus {
   .profile-pic {
     margin: 1em;
   }
-  .prev-employee-btn:hover,
-  .next-employee-btn:hover {
-    background-color: rgba(21, 71, 128, 0.247);
-    color: white;
-  }
 
-  .prev-employee-btn:active,
-  .next-employee-btn:active {
-    background-color: rgba(21, 71, 128, 0.589);
-  }
-}
 
 @media (min-width: 768px) {
   .content-wrapper {
