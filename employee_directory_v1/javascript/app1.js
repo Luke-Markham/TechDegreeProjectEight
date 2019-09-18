@@ -1,5 +1,5 @@
 let employees;
-const url = `https://randomuser.me/api/?results=12&inc=name, picture,
+const url = `https://randomuser.me/api/?results=75&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
 const search = document.querySelector('input');
 const searchBtn = document.querySelector('.search-btn');
@@ -40,7 +40,7 @@ function displayEmployees(response) {
 // Display modal employee =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 function displayModal(index) {
-  // use object destructuring to make  template literal cleaner
+  // use object destructuring to make template literal cleaner
   const {
     name,
     dob,
@@ -123,7 +123,7 @@ gridContainer.addEventListener('click', e => {
     displayModal(index);
     if (index === '0') {
       document.querySelector('.prev-employee-btn').style.display = 'none';
-    } else if (index === '11')
+    } else if (index === '74')
       document.querySelector('.next-employee-btn').style.display = 'none';
   }
 });
@@ -151,7 +151,7 @@ function nextEmployeeBtn() {
     currentModalEmployeeIndexAsString
   );
   displayModal(currentModalEmployeeIndexAsNumber + 1);
-  if (currentModalEmployeeIndexAsString === '10') {
+  if (currentModalEmployeeIndexAsString === '73') {
     document.querySelector('.next-employee-btn').style.display = 'none';
   } else {
     document.querySelector('.next-employee-btn').style.display = 'block';

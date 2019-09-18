@@ -125,8 +125,12 @@ input:focus {
 /* MODAL STYLING =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 .modal {
   width: 50%;
-  margin: 15% auto auto;
-  position: relative;
+  margin: auto;
+  left:25%;
+  right: 25%;
+  top:25%;
+  bottom: 25%;
+  position: fixed;
   text-align: center;
   background: #fff;
   border-radius: 5px;
